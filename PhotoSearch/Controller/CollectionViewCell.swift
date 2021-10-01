@@ -7,34 +7,19 @@
 
 import UIKit
 
-class CollectionViewCell: UICollectionViewCell {
-    static let identifier = "CollectionViewCell"
+class CollectionCell: UICollectionViewCell {
     
-    private let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.clipsToBounds = true
-        imageView.contentMode = .scaleAspectFill
-        return imageView
-    }()
+    @IBOutlet weak var imageView: UIImageView!
+//    static let identifier = "CollectionViewCell"
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        contentView.addSubview(imageView)
-    }
+    //private let imageView: UIImageView = {
+//        let imageView = UIImageView()
+//        imageView.clipsToBounds = true
+//        imageView.contentMode = .scaleAspectFill
+//        return imageView
+   // }()
     
-    required init?(coder: NSCoder) {
-        fatalError()
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        imageView.frame = contentView.bounds
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        imageView.image = nil
-    }
+
     
     func configure(with urlString: String) {
         guard let url = URL(string: urlString) else { return }
