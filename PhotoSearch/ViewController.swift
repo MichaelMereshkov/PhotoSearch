@@ -35,7 +35,6 @@ class ViewController: UIViewController, UISearchBarDelegate {
         searchBarPhoto.delegate = self
     }
     
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBarPhoto.resignFirstResponder()
         if let text = searchBar.text {
@@ -55,7 +54,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
                 let jsonResult = try JSONDecoder().decode(APIResponse.self, from: data)
                 DispatchQueue.main.async {
                     self.results = jsonResult.results
-                    let vc = self.storyboard?.instantiateViewController(identifier: "CollectionViewControllerID") as! CollectionViewController
+                    let vc = self.storyboard?.instantiateViewController(identifier: "ViewControllerID") as! ViewController2
                     vc.results2 = self.results
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
@@ -68,7 +67,6 @@ class ViewController: UIViewController, UISearchBarDelegate {
     
     @IBAction func searchButton(_ sender: UIButton) {
         fetchPhotos(query: searchBarPhoto.text!)
-                
     }
 }
 
