@@ -16,21 +16,35 @@
                 <rect key="frame" x="0.0" y="0.0" width="199" height="160"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="loX-et-nZh">
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cvh-W8-1RR">
                         <rect key="frame" x="0.0" y="0.0" width="199" height="160"/>
-                    </imageView>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="loX-et-nZh">
+                                <rect key="frame" x="0.0" y="0.0" width="199" height="160"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="loX-et-nZh" firstAttribute="top" secondItem="Cvh-W8-1RR" secondAttribute="top" id="1bq-na-iIg"/>
+                            <constraint firstAttribute="bottom" secondItem="loX-et-nZh" secondAttribute="bottom" id="AJv-rt-IxW"/>
+                            <constraint firstAttribute="height" secondItem="loX-et-nZh" secondAttribute="height" id="EtO-G5-lvv"/>
+                            <constraint firstItem="loX-et-nZh" firstAttribute="leading" secondItem="Cvh-W8-1RR" secondAttribute="leading" id="Lcq-Lr-1OM"/>
+                            <constraint firstAttribute="trailing" secondItem="loX-et-nZh" secondAttribute="trailing" id="guZ-6e-AbS"/>
+                            <constraint firstAttribute="width" secondItem="loX-et-nZh" secondAttribute="width" id="jg2-Ue-jap"/>
+                        </constraints>
+                    </scrollView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="loX-et-nZh" secondAttribute="bottom" id="3ae-RN-paH"/>
-                <constraint firstItem="loX-et-nZh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fpE-Zz-zuj"/>
-                <constraint firstAttribute="trailing" secondItem="loX-et-nZh" secondAttribute="trailing" id="goN-8e-VL9"/>
-                <constraint firstItem="loX-et-nZh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vQO-65-CjU"/>
+                <constraint firstItem="Cvh-W8-1RR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="58i-fY-TKi"/>
+                <constraint firstAttribute="bottom" secondItem="Cvh-W8-1RR" secondAttribute="bottom" id="8jy-jN-SIq"/>
+                <constraint firstItem="Cvh-W8-1RR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Nfj-LM-MgL"/>
+                <constraint firstAttribute="trailing" secondItem="Cvh-W8-1RR" secondAttribute="trailing" id="zpZ-eH-qVI"/>
             </constraints>
             <size key="customSize" width="199" height="160"/>
             <connections>
                 <outlet property="photoView" destination="loX-et-nZh" id="gj8-D4-Wh9"/>
+                <outlet property="scrolView" destination="Cvh-W8-1RR" id="bWl-iK-wKP"/>
             </connections>
             <point key="canvasLocation" x="161.59420289855075" y="100.44642857142857"/>
         </collectionViewCell>

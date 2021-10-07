@@ -24,7 +24,7 @@ struct URLS: Codable {
 //UICollectionViewDataSource
 class ViewController: UIViewController, UISearchBarDelegate {
     
-    @IBOutlet weak var searchBarPhoto: UISearchBar!
+    @IBOutlet weak var searchBarPhoto: UISearchBar?
     @IBOutlet weak var outletButton: UIButton!
     
     var results: [Result] = []
@@ -32,11 +32,11 @@ class ViewController: UIViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchBarPhoto.delegate = self
+        searchBarPhoto?.delegate = self
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBarPhoto.resignFirstResponder()
+        searchBarPhoto?.resignFirstResponder()
         if let text = searchBar.text {
             results = []
             fetchPhotos(query: text)
@@ -66,7 +66,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
     }
     
     @IBAction func searchButton(_ sender: UIButton) {
-        fetchPhotos(query: searchBarPhoto.text!)
+        fetchPhotos(query: (searchBarPhoto?.text!)!)
     }
 }
 

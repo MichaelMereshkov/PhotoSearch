@@ -7,14 +7,22 @@
 
 import UIKit
 
-class CollectionViewCellFull: UICollectionViewCell {
-    
+class CollectionViewCellFull: UICollectionViewCell, UIScrollViewDelegate {
+
+    @IBOutlet weak var scrolView: UIScrollView!
     @IBOutlet weak var photoView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.scrolView.delegate = self
+        self.scrolView.minimumZoomScale = 1.0
+        self.scrolView.maximumZoomScale = 3.5
     }
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return photoView
+    }
+    
     func configureURL(with urlString: String) {
             guard let url = URL(string: urlString) else { return }
             URLSession.shared.dataTask(with: url) { [weak self] data, _, error in

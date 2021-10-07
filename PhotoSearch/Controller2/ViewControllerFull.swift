@@ -21,20 +21,24 @@ class ViewControllerFull: ViewController, UICollectionViewDelegate, UICollection
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        collectionView.register(UINib(nibName: "ViewControllerFull", bundle: nil), forCellWithReuseIdentifier: identifier)
+        collectionView.register(UINib(nibName: "CollectionViewCellFull", bundle: nil), forCellWithReuseIdentifier: identifier)
+        
+        collectionView.performBatchUpdates(nil) { (result) in
+            self.collectionView.scrollToItem(at: self.indexPaths, at: .centeredHorizontally, animated: false)
+        }
         
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        results3.count
+        return results3.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let imageURLString = results3[indexPath.row].urls.regular
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? CollectionViewCellFull
-        cell?.configureURL(with: imageURLString)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? CollectionViewCellFull else { return UICollectionViewCell() }
+        cell.configureURL(with: imageURLString)
         
-        return cell!
+        return cell
     }
 
 }
