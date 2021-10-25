@@ -7,37 +7,38 @@
 
 import UIKit
 
-class ViewControllerFull: ViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ViewControllerFull: ViewController, UICollectionViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    var results3 = [Result]()
+    let collectionViewCellFull = CollectionViewCellFull()
+    var results3 = ""
     let identifier = "FullScreenCell"
     let countCells = 1
     var indexPaths: IndexPath = []
+    var images = UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
-        collectionView.dataSource = self
+        //collectionView.dataSource = self
         
         collectionView.register(UINib(nibName: "CollectionViewCellFull", bundle: nil), forCellWithReuseIdentifier: identifier)
+        collectionView.
+    }
+    
+    private func setupImageView() {
+        guard let name = results3 else { return }
         
-        collectionView.performBatchUpdates(nil) { (result) in
-            self.collectionView.scrollToItem(at: self.indexPaths, at: .centeredHorizontally, animated: false)
+        if let image = UIImage(named: name) {
+            collectionViewCellFull.photoView.image = image
         }
+    }
+    
+    func collectionViewC(cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return results3.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let imageURLString = results3[indexPath.row].urls.regular
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? CollectionViewCellFull else { return UICollectionViewCell() }
-        cell.configureURL(with: imageURLString)
-        
+        cell.configureURL(with: results3)
+
         return cell
     }
 
