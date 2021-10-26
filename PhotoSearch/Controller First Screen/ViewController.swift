@@ -21,7 +21,7 @@ struct Result: Codable {
 struct URLS: Codable {
     let regular: String
 }
-//UICollectionViewDataSource
+
 class ViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var searchBarPhoto: UISearchBar?
