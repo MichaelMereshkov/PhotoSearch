@@ -31,22 +31,8 @@ class ViewController2: UIViewController, UICollectionViewDelegate, UICollectionV
         let vc = storyboard?.instantiateViewController(withIdentifier: "ViewControllerFull") as! ViewControllerFull
         collectionView.deselectItem(at: indexPath, animated: true)
         vc.results3 = results2[indexPath.item].urls.regular
-        vc.indexPaths = indexPath
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
-    
-//    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-//
-//        let vc = storyboard?.instantiateViewController(withIdentifier: "ViewControllerFull") as! ViewControllerFull
-//        collectionView.deselectItem(at: indexPath, animated: true)
-//        vc.results3 = results2
-//        vc.indexPaths = indexPath
-//        self.navigationController?.pushViewController(vc, animated: true)
-//
-////        collectionView.deselectItem(at: indexPath, animated: true)
-////        print("Ты нажал на меня")
-//    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return results2.count
@@ -60,10 +46,4 @@ class ViewController2: UIViewController, UICollectionViewDelegate, UICollectionV
         return cell
     }
 }
-
-//extension UICollectionViewController: UICollectionViewDelegateFlowLayout {
-//    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: 120, height: 120)
-//    }
-//}
 

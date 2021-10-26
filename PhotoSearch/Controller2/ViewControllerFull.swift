@@ -7,42 +7,40 @@
 
 import UIKit
 
-class ViewControllerFull: ViewController, UICollectionViewDelegate {
+class ViewControllerFull: ViewController, UIScrollViewDelegate {
     
-    @IBOutlet weak var collectionView: UICollectionView!
-    let collectionViewCellFull = CollectionViewCellFull()
-    var results3 = ""
-    let identifier = "FullScreenCell"
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var photoView: UIImageView!
+    
+    var results3: String = ""
     let countCells = 1
-    var indexPaths: IndexPath = []
-    var images = UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.delegate = self
-        //collectionView.dataSource = self
-        
-        collectionView.register(UINib(nibName: "CollectionViewCellFull", bundle: nil), forCellWithReuseIdentifier: identifier)
-        collectionView.
+        self.scrollView.delegate = self
+        self.scrollView.minimumZoomScale = 1.0
+        self.scrollView.maximumZoomScale = 3.5
+
+        configureURL(with: results3)
     }
     
-    private func setupImageView() {
-        guard let name = results3 else { return }
-        
-        if let image = UIImage(named: name) {
-            collectionViewCellFull.photoView.image = image
-        }
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return photoView
     }
     
-    func collectionViewC(cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? CollectionViewCellFull else { return UICollectionViewCell() }
-        cell.configureURL(with: results3)
-
-        return cell
+    func configureURL(with urlString: String) {
+            guard let url = URL(string: urlString) else { return }
+            URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+                guard let data = data, error == nil else { return }
+                DispatchQueue.main.async {
+                    let image = UIImage(data: data)
+                    self?.photoView.image = image
+                }
+            }
+        .resume()
     }
-
 }
+
 extension ViewControllerFull: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
