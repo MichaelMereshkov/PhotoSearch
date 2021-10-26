@@ -66,9 +66,9 @@
 			children = (
 				D46EA2DD27032AB000B464EF /* AppDelegate.swift */,
 				D46EA2DF27032AB000B464EF /* SceneDelegate.swift */,
-				D46EA2E127032AB000B464EF /* ViewController.swift */,
-				D4703A0F27037AF100CEDFDD /* Controller */,
-				D470CD7D270F377C00584466 /* Controller2 */,
+				D48B5FD72728394300B0A3A9 /* Controller First Screen */,
+				D4703A0F27037AF100CEDFDD /* Controller Gallery */,
+				D470CD7D270F377C00584466 /* Controller Full Screen */,
 				D4703A112703A53A00CEDFDD /* View */,
 				D46EA2E627032AB800B464EF /* Assets.xcassets */,
 				D46EA2E827032AB800B464EF /* LaunchScreen.storyboard */,
@@ -77,14 +77,14 @@
 			path = PhotoSearch;
 			sourceTree = "<group>";
 		};
-		D4703A0F27037AF100CEDFDD /* Controller */ = {
+		D4703A0F27037AF100CEDFDD /* Controller Gallery */ = {
 			isa = PBXGroup;
 			children = (
 				D4703A082703792B00CEDFDD /* ViewController2.swift */,
 				D4AB68F22707B18F000A38E6 /* MyCollectionViewCell.swift */,
 				D4AB68F32707B18F000A38E6 /* MyCollectionViewCell.xib */,
 			);
-			path = Controller;
+			path = "Controller Gallery";
 			sourceTree = "<group>";
 		};
 		D4703A112703A53A00CEDFDD /* View */ = {
@@ -95,12 +95,20 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		D470CD7D270F377C00584466 /* Controller2 */ = {
+		D470CD7D270F377C00584466 /* Controller Full Screen */ = {
 			isa = PBXGroup;
 			children = (
 				D470CD7E270F37D100584466 /* ViewControllerFull.swift */,
 			);
-			path = Controller2;
+			path = "Controller Full Screen";
+			sourceTree = "<group>";
+		};
+		D48B5FD72728394300B0A3A9 /* Controller First Screen */ = {
+			isa = PBXGroup;
+			children = (
+				D46EA2E127032AB000B464EF /* ViewController.swift */,
+			);
+			path = "Controller First Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
