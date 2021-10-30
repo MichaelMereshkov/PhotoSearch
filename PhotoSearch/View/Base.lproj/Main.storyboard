@@ -143,9 +143,16 @@
                             <constraint firstItem="8XC-VJ-B8H" firstAttribute="centerX" secondItem="gAf-hO-zpI" secondAttribute="centerX" id="iC6-5w-u6d"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="RUu-6C-kE4"/>
+                    <navigationItem key="navigationItem" id="RUu-6C-kE4">
+                        <barButtonItem key="rightBarButtonItem" image="suit.heart" catalog="system" id="0hY-vv-gxm">
+                            <connections>
+                                <action selector="savePhoto:" destination="yOg-Gu-EAm" id="QCt-ff-ass"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="photoView" destination="UsZ-nk-ggC" id="yDy-as-S4t"/>
+                        <outlet property="savePhotoOutlet" destination="0hY-vv-gxm" id="Ntn-P9-jnZ"/>
                         <outlet property="scrollView" destination="8XC-VJ-B8H" id="vOl-Hf-Omz"/>
                     </connections>
                 </viewController>
@@ -191,6 +198,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="suit.heart" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

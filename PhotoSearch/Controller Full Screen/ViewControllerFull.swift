@@ -11,6 +11,7 @@ class ViewControllerFull: ViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var photoView: UIImageView!
+    @IBOutlet weak var savePhotoOutlet: UIBarButtonItem!
     
     var results3: String = ""
     let countCells = 1
@@ -22,8 +23,10 @@ class ViewControllerFull: ViewController, UIScrollViewDelegate {
         self.scrollView.maximumZoomScale = 3.5
 
         configureURL(with: results3)
+        
+        savePhotoOutlet.image = UIImage(systemName: "suit.heart")
+        
     }
-    
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return photoView
     }
@@ -39,16 +42,19 @@ class ViewControllerFull: ViewController, UIScrollViewDelegate {
             }
         .resume()
     }
-}
+    
+    
+    
+    @IBAction func savePhoto(_ sender: UIBarButtonItem) {
 
-extension ViewControllerFull: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        savePhotoOutlet.image = UIImage(systemName: "suit.heart.fill")
+        let imageData = photoView.image
+          
+        UIImageWriteToSavedPhotosAlbum(imageData!, nil, nil, nil)
         
-        let frameCV = collectionView.frame
-        
-        let widthCell = frameCV.width / CGFloat(countCells)
-        let heightCell = widthCell
-        
-        return CGSize(width: widthCell, height: heightCell)
+        let alert = UIAlertController(title: "Save", message: "Your image", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
     }
 }
