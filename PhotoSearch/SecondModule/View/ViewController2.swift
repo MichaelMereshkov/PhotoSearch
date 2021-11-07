@@ -29,8 +29,12 @@ class ViewController2: UIViewController, UICollectionViewDelegate, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "ViewControllerFull") as! ViewControllerFull
+        let preseter = ViewFullPresenter()
+        vc.presenter = preseter
+        preseter.delegate = vc
+        preseter.results3 = results2[indexPath.item].urls.regular
+        
         collectionView.deselectItem(at: indexPath, animated: true)
-        vc.results3 = results2[indexPath.item].urls.regular
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

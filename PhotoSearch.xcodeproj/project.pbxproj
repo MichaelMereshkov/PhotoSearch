@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D43701AB2737EBA600958CD5 /* ViewFullPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43701AA2737EBA600958CD5 /* ViewFullPresenter.swift */; };
+		D46C838C2737FC7A00BE4097 /* ViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C838B2737FC7A00BE4097 /* ViewPresenter.swift */; };
 		D46EA2DE27032AB000B464EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46EA2DD27032AB000B464EF /* AppDelegate.swift */; };
 		D46EA2E027032AB000B464EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46EA2DF27032AB000B464EF /* SceneDelegate.swift */; };
 		D46EA2E227032AB000B464EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46EA2E127032AB000B464EF /* ViewController.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D43701AA2737EBA600958CD5 /* ViewFullPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFullPresenter.swift; sourceTree = "<group>"; };
+		D46C838B2737FC7A00BE4097 /* ViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresenter.swift; sourceTree = "<group>"; };
 		D46EA2DA27032AB000B464EF /* PhotoSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D46EA2DD27032AB000B464EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D46EA2DF27032AB000B464EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +53,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D43701A92737EB7700958CD5 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D43701AA2737EBA600958CD5 /* ViewFullPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D46C838A2737FC4700BE4097 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D46C838B2737FC7A00BE4097 /* ViewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		D46EA2D127032AB000B464EF = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +138,7 @@
 			children = (
 				D47B31B127318E9400871623 /* Model */,
 				D4703A0F27037AF100CEDFDD /* View */,
+				D46C838A2737FC4700BE4097 /* Presenter */,
 			);
 			path = MainModule;
 			sourceTree = "<group>";
@@ -134,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				D470CD7D270F377C00584466 /* View */,
+				D43701A92737EB7700958CD5 /* Presenter */,
 			);
 			path = ThirdModule;
 			sourceTree = "<group>";
@@ -234,8 +256,10 @@
 				D4AB68F42707B18F000A38E6 /* MyCollectionViewCell.swift in Sources */,
 				D46EA2DE27032AB000B464EF /* AppDelegate.swift in Sources */,
 				D46EA2E027032AB000B464EF /* SceneDelegate.swift in Sources */,
+				D43701AB2737EBA600958CD5 /* ViewFullPresenter.swift in Sources */,
 				D4703A092703792B00CEDFDD /* ViewController2.swift in Sources */,
 				D470CD7F270F37D100584466 /* ViewControllerFull.swift in Sources */,
+				D46C838C2737FC7A00BE4097 /* ViewPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
