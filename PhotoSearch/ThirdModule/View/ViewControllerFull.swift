@@ -31,6 +31,7 @@ class ViewControllerFull: ViewController, UIScrollViewDelegate {
     @IBAction func savePhoto(_ sender: UIBarButtonItem) {
         presenter?.saveImage(image: photoView.image)
         savePhotoOutlet.image = UIImage(systemName: "suit.heart.fill")
+        presenter?.showAlert()
     }
 }
 

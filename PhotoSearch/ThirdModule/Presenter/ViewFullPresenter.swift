@@ -13,6 +13,7 @@ protocol ViewFullPresenterProtocol: AnyObject {
     
     func getImage()
     func saveImage(image: UIImage?)
+    func showAlert()
 }
 
 
@@ -45,7 +46,7 @@ final class ViewFullPresenter: ViewFullPresenterProtocol {
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
     }
     
-    private func showAlert() {
+    internal func showAlert() {
         let alert = UIAlertController(title: "Save", message: "Your image", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alert.addAction(okAction)

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D43701AB2737EBA600958CD5 /* ViewFullPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43701AA2737EBA600958CD5 /* ViewFullPresenter.swift */; };
+		D440B1E327467EDF00B95576 /* PresenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D440B1E227467EDF00B95576 /* PresenterView.swift */; };
 		D46C838C2737FC7A00BE4097 /* ViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C838B2737FC7A00BE4097 /* ViewPresenter.swift */; };
 		D46EA2DE27032AB000B464EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46EA2DD27032AB000B464EF /* AppDelegate.swift */; };
 		D46EA2E027032AB000B464EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46EA2DF27032AB000B464EF /* SceneDelegate.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		D43701AA2737EBA600958CD5 /* ViewFullPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFullPresenter.swift; sourceTree = "<group>"; };
+		D440B1E227467EDF00B95576 /* PresenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterView.swift; sourceTree = "<group>"; };
 		D46C838B2737FC7A00BE4097 /* ViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresenter.swift; sourceTree = "<group>"; };
 		D46EA2DA27032AB000B464EF /* PhotoSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D46EA2DD27032AB000B464EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,14 @@
 			isa = PBXGroup;
 			children = (
 				D43701AA2737EBA600958CD5 /* ViewFullPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D440B1E127467E7F00B95576 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D440B1E227467EDF00B95576 /* PresenterView.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -147,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				D47B31BE273199D600871623 /* View */,
+				D440B1E127467E7F00B95576 /* Presenter */,
 			);
 			path = SecondModule;
 			sourceTree = "<group>";
@@ -254,6 +265,7 @@
 				D46EA2E227032AB000B464EF /* ViewController.swift in Sources */,
 				D47B31B72731901A00871623 /* NetworkService.swift in Sources */,
 				D4AB68F42707B18F000A38E6 /* MyCollectionViewCell.swift in Sources */,
+				D440B1E327467EDF00B95576 /* PresenterView.swift in Sources */,
 				D46EA2DE27032AB000B464EF /* AppDelegate.swift in Sources */,
 				D46EA2E027032AB000B464EF /* SceneDelegate.swift in Sources */,
 				D43701AB2737EBA600958CD5 /* ViewFullPresenter.swift in Sources */,

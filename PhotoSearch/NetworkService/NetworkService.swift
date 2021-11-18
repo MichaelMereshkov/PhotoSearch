@@ -10,7 +10,7 @@ import UIKit
 
 final class NetworkService {
     
-    var results: [Result] = []
+    //var results: [Result] = []
     
     func fetchImage(with urlString: String, completion: @escaping (UIImage?)->()) {
             guard let url = URL(string: urlString) else {
